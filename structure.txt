@@ -1,0 +1,24 @@
+food_blog/
+│
+├── app.py
+├── config.py
+├── requirements.txt
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── images/
+│   └── js/
+│
+├── templates/
+│   ├── base.html
+│   ├── index.html
+│   ├── recipe.html
+│   ├── contact.html
+│   ├── admin_dashboard.html
+│   ├── admin_login.html
+│   ├── manage_recipes.html
+│   └── manage_categories.html
+│
+└── database/
+    └── food_blog.sql

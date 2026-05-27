@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width,
+    initial-scale=1.0">
+
+    <title>Edit Recipe</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='css/admin.css') }}">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <h2>
+            <i class="fa-solid fa-utensils"></i>
+            Food Blog
+        </h2>
+
+        <ul>
+
+            <li>
+                <a href="/admin">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/add-recipe">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    Add Recipe
+                </a>
+            </li>
+
+            <li>
+                <a href="/add-blog">
+                    <i class="fa-regular fa-file-lines"></i>
+                    Add Blog
+                </a>
+            </li>
+
+            <li>
+                <a href="/messages">
+                    <i class="fa-regular fa-message"></i>
+                    Messages
+                </a>
+            </li>
+
+            <li>
+                <a href="/">
+                    <i class="fa-solid fa-globe"></i>
+                    Client Page
+                </a>
+            </li>
+
+            <li>
+                <a href="/logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <div class="form-container">
+
+            <h1 class="dashboard-title">
+                Edit Recipe
+            </h1>
+
+            <form method="POST">
+
+                <!-- TITLE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Recipe Title
+                    </label>
+
+                    <input
+                    type="text"
+                    name="title"
+                    value="{{ recipe.title }}"
+                    required>
+
+                </div>
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                    name="description"
+                    rows="5"
+                    required>{{ recipe.description }}</textarea>
+
+                </div>
+
+                <!-- INGREDIENTS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Ingredients
+                    </label>
+
+                    <textarea
+                    name="ingredients"
+                    rows="5"
+                    required>{{ recipe.ingredients }}</textarea>
+
+                </div>
+
+                <!-- INSTRUCTIONS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Instructions
+                    </label>
+
+                    <textarea
+                    name="instructions"
+                    rows="5"
+                    required>{{ recipe.instructions }}</textarea>
+
+                </div>
+
+                <!-- IMAGE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Image URL
+                    </label>
+
+                    <input
+                    type="text"
+                    name="image"
+                    value="{{ recipe.image }}"
+                    required>
+
+                </div>
+
+                <!-- CATEGORY -->
+
+                <div class="form-group">
+
+                    <label>
+                        Category
+                    </label>
+
+                    <select name="category_id">
+
+                        {% for category in categories %}
+
+                        <option
+                        value="{{ category.id }}"
+
+                        {% if recipe.category_id
+                        == category.id %}
+                        selected
+                        {% endif %}>
+
+                            {{ category.category_name }}
+
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+                <!-- BUTTON -->
+
+                <button
+                type="submit"
+                class="submit-btn">
+
+                    <i class="fa-solid fa-pen"></i>
+
+                    Update Recipe
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

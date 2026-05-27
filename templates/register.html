@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Register</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='css/client.css') }}">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body class="login-page">
+
+<div class="login-box">
+
+    <h1>
+        <i class="fa-solid fa-user-plus"></i>
+        Register
+    </h1>
+
+    <p class="login-text">
+        Create your Food Blog account 🍴
+    </p>
+
+    <form method="POST">
+
+        <!-- USERNAME -->
+
+        <div class="form-group">
+
+            <input
+            type="text"
+            name="username"
+            placeholder="Enter Username"
+            required>
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+            <input
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+            required>
+
+        </div>
+
+        <!-- PASSWORD -->
+
+        <div class="form-group">
+
+            <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            required>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button
+        type="submit"
+        class="submit-btn">
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            Create Account
+
+        </button>
+
+    </form>
+
+    <!-- LOGIN LINK -->
+
+    <p class="bottom-text">
+
+        Already have an account?
+
+        <a href="/login">
+            Login
+        </a>
+
+    </p>
+
+</div>
+
+</body>
+
+</html>

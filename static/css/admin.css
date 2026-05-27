@@ -1,0 +1,853 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:Arial, sans-serif;
+}
+
+body{
+
+    background:#f4f4f4;
+}
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+
+.dashboard-container{
+
+    display:flex;
+
+    min-height:100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+
+    width:260px;
+
+    background:#071739;
+
+    color:white;
+
+    padding:40px 25px;
+
+    position:fixed;
+
+    height:100vh;
+}
+
+.sidebar h2{
+
+    font-size:40px;
+
+    margin-bottom:50px;
+
+    color:#ff7a18;
+}
+
+.sidebar ul{
+
+    list-style:none;
+}
+
+.sidebar ul li{
+
+    margin-bottom:20px;
+}
+
+.sidebar ul li a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    display:block;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    transition:0.3s;
+}
+
+.sidebar ul li a:hover{
+
+    background:#ff7a18;
+
+    transform:translateX(5px);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content{
+
+    margin-left:260px;
+
+    width:100%;
+
+    padding:40px;
+
+    background:
+    linear-gradient(
+    rgba(255,255,255,0.85),
+    rgba(255,255,255,0.85)
+    ),
+
+    url('https://images.unsplash.com/photo-1498837167922-ddd27525d352');
+
+    background-size:cover;
+
+    background-position:center;
+
+    min-height:100vh;
+}
+
+.dashboard-title{
+
+    font-size:60px;
+
+    margin-bottom:40px;
+
+    color:#111827;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards-container{
+
+    display:flex;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:50px;
+}
+
+.dashboard-card{
+
+    flex:1;
+
+    min-width:260px;
+
+    background:rgba(255,255,255,0.7);
+
+    backdrop-filter:blur(8px);
+
+    padding:35px;
+
+    border-radius:25px;
+
+    box-shadow:0 8px 25px
+    rgba(0,0,0,0.1);
+
+    transition:0.3s;
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+}
+
+.dashboard-card h2{
+
+    color:#333;
+
+    margin-bottom:15px;
+
+    font-size:28px;
+}
+
+.dashboard-card h1{
+
+    color:#ff7a18;
+
+    font-size:55px;
+}
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+.add-btn{
+
+    display:inline-block;
+
+    background:#16a34a;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:16px 28px;
+
+    border-radius:14px;
+
+    margin-bottom:35px;
+
+    font-size:22px;
+
+    transition:0.3s;
+}
+
+.add-btn:hover{
+
+    background:#15803d;
+
+    transform:scale(1.05);
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-container{
+
+    background:white;
+
+    border-radius:25px;
+
+    overflow-x:auto;
+
+    overflow-y:hidden;
+
+    box-shadow:0 10px 30px
+    rgba(0,0,0,0.1);
+
+    margin-top:30px;
+}
+
+table{
+
+    width:100%;
+
+    min-width:1000px;
+
+    border-collapse:collapse;
+}
+
+table th{
+
+    background:#071739;
+
+    color:white;
+
+    padding:22px;
+
+    font-size:24px;
+
+    text-align:left;
+}
+
+table td{
+
+    padding:22px;
+
+    font-size:20px;
+
+    border-bottom:1px solid #eee;
+
+    vertical-align:middle;
+}
+
+table tr:hover{
+
+    background:#f9fafb;
+}
+
+/* =========================
+   RECIPE IMAGE
+========================= */
+
+.table-image{
+
+    width:90px;
+
+    height:70px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.action-buttons{
+
+    display:flex;
+
+    gap:10px;
+}
+
+.edit-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-size:16px;
+}
+
+.delete-btn{
+
+    background:#dc2626;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-size:16px;
+}
+
+.edit-btn:hover{
+
+    background:#1d4ed8;
+}
+
+.delete-btn:hover{
+
+    background:#b91c1c;
+}
+
+
+/* DARK MODE BUTTON */
+
+.dark-btn{
+
+    background:#111827;
+
+    color:white;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+}
+
+
+/* LOGIN PAGE ONLY */
+
+.login-page{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.7)
+    ),
+
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+
+.login-box{
+
+    width:400px;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(10px);
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px
+    rgba(0,0,0,0.4);
+}
+
+.login-box h1{
+
+    color:white;
+
+    margin-bottom:30px;
+
+    font-size:40px;
+}
+
+.login-box input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+}
+
+.login-box button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#ff7a18;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.login-box button:hover{
+
+    background:#ff5500;
+}
+
+.error{
+
+    color:#ffb3b3;
+
+    margin-top:15px;
+}
+.success{
+
+    color:#16a34a;
+
+    margin-top:15px;
+}
+.dark-btn:hover{
+    background:#111827;
+
+    transform:scale(1.05);
+}
+
+/* =========================
+   FORM PAGE
+========================= */
+
+.form-container{
+
+    max-width:700px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-group{
+
+    margin-bottom:25px;
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#111827;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+
+    width:100%;
+
+    padding:16px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+
+    border-color:#ff7a18;
+
+    box-shadow:0 0 0 4px rgba(255,122,24,0.15);
+}
+
+.submit-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:16px 28px;
+
+    border-radius:14px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.submit-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+}
+
+/* =========================
+   SIDEBAR IMPROVEMENTS
+========================= */
+
+.sidebar{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    box-shadow:4px 0 20px rgba(0,0,0,0.15);
+}
+
+.sidebar h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:34px;
+}
+
+.sidebar ul li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-weight:500;
+}
+
+/* ACTIVE LINK */
+
+.sidebar ul li a.active{
+
+    background:#ff7a18;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content{
+
+    padding:50px;
+}
+
+/* =========================
+   DASHBOARD TITLE
+========================= */
+
+.dashboard-title{
+
+    font-size:55px;
+
+    font-weight:bold;
+
+    margin-bottom:35px;
+}
+
+/* =========================
+   CARD IMPROVEMENTS
+========================= */
+
+.dashboard-card{
+
+    transition:0.35s;
+
+    border:1px solid rgba(255,255,255,0.3);
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,0.15);
+}
+
+.dashboard-card h2{
+
+    font-size:24px;
+
+    color:#555;
+}
+
+.dashboard-card h1{
+
+    margin-top:10px;
+}
+
+/* =========================
+   TABLE HEADER
+========================= */
+
+table th{
+
+    font-weight:600;
+
+    letter-spacing:0.5px;
+}
+
+/* =========================
+   TABLE ROW ANIMATION
+========================= */
+
+table tr{
+
+    transition:0.3s;
+}
+
+table tr:hover{
+
+    background:#f3f4f6;
+
+    transform:scale(1.01);
+}
+
+/* =========================
+   IMAGE EFFECT
+========================= */
+
+.table-image{
+
+    transition:0.3s;
+}
+
+.table-image:hover{
+
+    transform:scale(1.08);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.edit-btn,
+.delete-btn{
+
+    transition:0.3s;
+
+    font-weight:600;
+}
+
+.edit-btn:hover{
+
+    transform:translateY(-2px);
+}
+
+.delete-btn:hover{
+
+    transform:translateY(-2px);
+}
+
+/* =========================
+   FORM CONTAINER CENTER
+========================= */
+
+body{
+
+    min-height:100vh;
+}
+
+.form-container{
+
+    margin:50px auto;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .sidebar{
+
+        width:100%;
+
+        height:auto;
+
+        position:relative;
+    }
+
+    .main-content{
+
+        margin-left:0;
+
+        padding:25px;
+    }
+
+    .dashboard-container{
+
+        flex-direction:column;
+    }
+
+    .cards-container{
+
+        flex-direction:column;
+    }
+
+    .dashboard-title{
+
+        font-size:40px;
+    }
+
+    table{
+
+        min-width:800px;
+    }
+}
+
+.admin-favorites{
+
+    padding:120px 8%;
+
+    background:#f9fafb;
+
+    min-height:100vh;
+}
+
+.admin-favorites h1{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+    color:#111827;
+
+    font-size:45px;
+}
+
+.favorites-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.favorites-table thead{
+
+    background:#111827;
+
+    color:white;
+}
+
+.favorites-table th{
+
+    padding:18px;
+
+    text-align:left;
+
+    font-size:18px;
+}
+
+.favorites-table td{
+
+    padding:18px;
+
+    border-bottom:1px solid #e5e7eb;
+
+    font-size:16px;
+
+    color:#374151;
+}
+
+.favorites-table tr:hover{
+
+    background:#f3f4f6;
+}
+
+.user-name{
+
+    font-weight:bold;
+
+    color:#ff7a18;
+}
+
+.recipe-name{
+
+    font-weight:600;
+}

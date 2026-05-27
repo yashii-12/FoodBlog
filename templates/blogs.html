@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Food Blogs</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='css/client.css') }}">
+
+</head>
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        Foodie Blog
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/blogs">Blogs</a>
+
+        <a href="/about">About</a>
+
+    </div>
+
+</nav>
+
+<section class="recipes-section">
+
+    <h1 class="section-title">
+        Latest Blogs
+    </h1>
+
+    <div class="recipe-container">
+
+        {% for blog in blogs %}
+
+        <div class="recipe-card">
+
+            <img src="{{ blog.image }}">
+
+            <div class="recipe-content">
+
+                <h2>
+
+                    <a href="/blog/{{ blog.id }}"
+                    class="recipe-link">
+
+                        {{ blog.title }}
+
+                    </a>
+
+                </h2>
+
+                <p>
+
+                    {{ blog.content[:150] }}...
+
+                </p>
+
+                <span class="category">
+
+                    By {{ blog.author }}
+
+                </span>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+</body>
+</html>

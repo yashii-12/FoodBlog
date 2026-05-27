@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Saved Recipes</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='css/client.css') }}">
+
+</head>
+
+<body>
+
+<section class="recipes-section">
+
+    <h2 class="section-title">
+        My Saved Recipes ❤️
+    </h2>
+
+    <div class="recipe-container">
+
+        {% for recipe in favorites %}
+
+        <div class="recipe-card">
+
+            <img
+            src="{{ recipe.image }}"
+            alt="{{ recipe.title }}">
+
+            <div class="recipe-content">
+
+                <h3>
+                    {{ recipe.title }}
+                </h3>
+
+                <p>
+                    {{ recipe.description[:120] }}...
+                </p>
+
+                <div class="recipe-buttons">
+
+                    <a href="/recipe/{{ recipe.id }}"
+                    class="view-btn">
+
+                        View Recipe
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+</body>
+</html>

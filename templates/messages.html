@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width,
+    initial-scale=1.0">
+
+    <title>Messages</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='css/admin.css') }}">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <h2>
+            Food Blog
+            <i class="fa-solid fa-utensils"></i>
+        </h2>
+
+        <ul>
+
+            <li>
+                <a href="/admin">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/messages">
+                    <i class="fa-regular fa-message"></i>
+                    Messages
+                </a>
+            </li>
+
+            <li>
+                <a href="/admin/favorites">
+                    <i class="fa-solid fa-heart"></i>
+                    Saved Recipes
+                </a>
+            </li>
+
+            <li>
+                <a href="/">
+                    <i class="fa-solid fa-globe"></i>
+                    Client Page
+                </a>
+            </li>
+
+            <li>
+                <a href="/logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <h1 class="dashboard-title">
+            Client Messages
+        </h1>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+
+                        <th>Email</th>
+
+                        <th>Message</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for message in messages %}
+
+                    <tr>
+
+                        <td>{{ message.id }}</td>
+
+                        <td>{{ message.name }}</td>
+
+                        <td>{{ message.email }}</td>
+
+                        <td>{{ message.message }}</td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

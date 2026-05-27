@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Recipes</title>
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/client.css') }}">
+
+</head>
+<body>
+
+<div class="manage-page">
+
+    <h1>Manage Recipes</h1>
+
+    <form
+    method="POST"
+    action="/admin/add_recipe"
+    enctype="multipart/form-data"
+    class="recipe-form"
+>
+
+        <input type="text" name="title" placeholder="Recipe Title" required>
+
+        <textarea name="description" placeholder="Description"></textarea>
+
+        <textarea name="ingredients" placeholder="Ingredients"></textarea>
+
+        <textarea name="instructions" placeholder="Instructions"></textarea>
+
+        <input type="file" name="image" required>
+        
+        <button type="submit">Add Recipe</button>
+
+    </form>
+
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Action</th>
+        </tr>
+
+        {% for recipe in recipes %}
+        <tr>
+            <td>{{ recipe.title }}</td>
+            <td>
+                <a href="/admin/edit_recipe/{{ recipe.id }}">Edit</a>
+
+                <a href="/admin/delete_recipe/{{ recipe.id }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

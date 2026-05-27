@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Saved Recipes</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='css/admin.css') }}">
+
+</head>
+
+<body>
+
+<div class="admin-favorites">
+
+    <h1>
+        User Saved Recipes
+    </h1>
+
+    <table class="favorites-table">
+
+        <thead>
+
+            <tr>
+
+                <th>User</th>
+
+                <th>Recipe</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for item in favorites %}
+
+            <tr>
+
+                <td class="user-name">
+                    {{ item.username }}
+                </td>
+
+                <td class="recipe-name">
+                    {{ item.title }}
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>

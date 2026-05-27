@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Food Blog Admin</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='css/admin.css') }}">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<!-- DASHBOARD CONTAINER -->
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <h2>
+            Food Blog
+            <i class="fa-solid fa-utensils"></i> 
+        </h2>
+
+        <ul>
+
+            <li>
+                <a href="/admin">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/add-recipe" >
+                    <i class="fa-solid fa-circle-plus"></i>
+                    Add Recipe
+                </a>
+            </li>
+
+            <li>
+                <a href="/add-blog">
+                    <i class="fa-regular fa-file-lines"></i>
+                    Add Blog
+                </a>
+            </li>
+
+            <li>
+                <a href="/messages">
+                    <i class="fa-regular fa-message"></i>
+                    Messages
+                </a>
+            </li>
+
+<li>
+    <a href="/admin/favorites">
+        <i class="fa-regular fa-heart"></i>
+        Saved Recipes
+    </a>
+</li>
+
+            <li>
+                <a href="/">
+                    <i class="fa-solid fa-globe"></i>
+                    Client Page
+                </a>
+            </li>
+
+            <li>
+                <a href="/logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TITLE -->
+
+        <h1 class="dashboard-title">
+            Dashboard
+        </h1>
+
+        <!-- CARDS -->
+
+        <div class="cards-container">
+
+            <div class="dashboard-card">
+
+                <h2>Total Recipes</h2>
+
+                <h1>
+                    {{ total_recipes.total_recipes }}
+                </h1>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h2>Total Categories</h2>
+
+                <h1>
+                    {{ total_categories.total_categories }}
+                </h1>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h2>Total Comments</h2>
+
+                <h1>
+                    {{ total_comments.total_comments }}
+                </h1>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h2>Total Messages</h2>
+
+                <h1>
+                    {{ total_messages.total_messages }}
+                </h1>
+
+            </div>
+
+        </div>
+
+        <!-- ADD BUTTON -->
+
+        <a href="/add-recipe"
+        class="add-btn">
+
+            + Add Recipe
+
+        </a>
+
+        <!-- TABLE -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+    <th>ID</th>
+
+    <th>Title</th>
+
+    <th>Description</th>
+
+    <th>Instructions</th>
+
+    <th>Actions</th>
+
+</tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for recipe in recipes %}
+
+                    <tr>
+
+                        <!-- ID -->
+
+                        <td>
+                            {{ recipe.id }}
+                        </td>
+
+                        <!-- IMAGE -->
+
+                        <td>
+
+                            <img src="{{ recipe.image }}"
+                            alt="Recipe Image"
+                            class="table-image">
+
+                        </td>
+
+                        <!-- TITLE -->
+
+                        <td>
+                            {{ recipe.title }}
+                        </td>
+
+                        <!-- DESCRIPTION -->
+
+                        <td>
+                            {{ recipe.description }}
+                        </td>
+                        <!-- INSTRUCTIONS -->
+
+                        <td>
+                            {{ recipe.instructions }}
+                        </td>
+
+                        <!-- BUTTONS -->
+
+                        <td>
+
+                            <div class="action-buttons">
+
+                                <a href="/edit-recipe/{{ recipe.id }}"
+                                class="edit-btn">
+
+                                    Edit
+
+                                </a>
+
+                                <a href="/delete-recipe/{{ recipe.id }}"
+                                class="delete-btn">
+
+                                    Delete
+
+                                </a>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

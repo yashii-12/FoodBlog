@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width,
+    initial-scale=1.0">
+
+    <title>
+        {{ recipe.title }}
+    </title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='css/client.css') }}">
+
+</head>
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        Foodie Blog
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/blogs">Blogs</a>
+
+        <a href="/about">About</a>
+
+    </div>
+
+</nav>
+
+<section class="recipe-details">
+
+    <div class="recipe-details-card">
+
+        <img src="{{ recipe.image }}">
+
+        <h1>{{ recipe.title }}</h1>
+
+        <p>{{ recipe.description }}</p>
+
+        <div class="ingredients">
+
+            <h2>Ingredients</h2>
+
+            <p>{{ recipe.ingredients }}</p>
+
+        </div>
+
+        <div class="instructions">
+
+            <h2>Instructions</h2>
+
+            <p>{{ recipe.instructions }}</p>
+
+        </div>
+
+        <span class="category">
+            {{ recipe.category_name }}
+        </span>
+
+        <br>
+
+        <a href="/" class="back-home-btn">
+            Back to Home
+        </a>
+
+    </div>
+
+</section>
+
+</body>
+</html>

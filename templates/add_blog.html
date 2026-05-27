@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width,
+    initial-scale=1.0">
+
+    <title>Add Blog</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='css/admin.css') }}">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <h2>
+            <i class="fa-solid fa-utensils"></i>
+            Food Blog
+        </h2>
+
+        <ul>
+
+            <li>
+                <a href="/admin">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/add-recipe">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    Add Recipe
+                </a>
+            </li>
+
+            <li>
+                <a href="/add-blog" class="add-btn">
+                    <i class="fa-regular fa-file-lines"></i>
+                    Add Blog
+                </a>
+            </li>
+
+            <li>
+                <a href="/messages">
+                    <i class="fa-regular fa-message"></i>
+                    Messages
+                </a>
+            </li>
+
+            <li>
+                <a href="/">
+                    <i class="fa-solid fa-globe"></i>
+                    Client Page
+                </a>
+            </li>
+
+            <li>
+                <a href="/logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <div class="form-container">
+
+            <h1 class="dashboard-title">
+                Add Blog
+            </h1>
+
+            <form method="POST">
+
+                <!-- BLOG TITLE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Blog Title
+                    </label>
+
+                    <input
+                    type="text"
+                    name="title"
+                    placeholder="Enter blog title"
+                    required>
+
+                </div>
+
+                <!-- BLOG CONTENT -->
+
+                <div class="form-group">
+
+                    <label>
+                        Blog Content
+                    </label>
+
+                    <textarea
+                    name="content"
+                    rows="8"
+                    placeholder="Write your blog content..."
+                    required></textarea>
+
+                </div>
+
+                <!-- IMAGE URL -->
+
+                <div class="form-group">
+
+                    <label>
+                        Blog Image URL
+                    </label>
+
+                    <input
+                    type="text"
+                    name="image"
+                    placeholder="Paste image URL"
+                    required>
+
+                </div>
+
+                <!-- AUTHOR -->
+
+                <div class="form-group">
+
+                    <label>
+                        Author Name
+                    </label>
+
+                    <input
+                    type="text"
+                    name="author"
+                    placeholder="Enter author name"
+                    required>
+
+                </div>
+
+                <!-- BUTTON -->
+
+                <button
+                type="submit"
+                class="submit-btn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add Blog
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='css/client.css') }}">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body class="login-page">
+
+<div class="login-box">
+
+    <h1>
+        <i class="fa-solid fa-utensils"></i>
+        Food Blog
+    </h1>
+
+    <p class="login-text">
+        Welcome Back 👋
+    </p>
+
+    <form method="POST">
+
+        <div class="form-group">
+
+            <input
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+            required>
+
+        </div>
+
+        <div class="form-group">
+
+            <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            required>
+
+        </div>
+
+        <button
+        type="submit"
+        class="submit-btn">
+
+            <i class="fa-solid fa-right-to-bracket"></i>
+            Login
+
+        </button>
+        {% if error %}
+
+<p class="error">
+    {{ error }}
+</p>
+
+{% endif %}
+
+    </form>
+
+    <p class="bottom-text">
+
+        Don't have an account?
+
+        <a href="/register">
+            Register
+        </a>
+
+    </p>
+
+</div>
+
+</body>
+</html>

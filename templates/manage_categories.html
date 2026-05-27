@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Categories</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/client.css') }}">
+
+</head>
+<body>
+
+<div class="manage-page">
+
+    <h1>Manage Categories</h1>
+
+    <form method="POST" action="/admin/add_category">
+        <input type="text" name="name" placeholder="Category Name" required>
+        <button type="submit">Add Category</button>
+    </form>
+
+</div>
+
+</body>
+</html>
+
+</div>
+
+</body>
+</html>

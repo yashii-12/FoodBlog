@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width,
+    initial-scale=1.0">
+
+    <title>Add Recipe</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='css/admin.css') }}">
+
+</head>
+<body>
+
+<div class="form-container">
+
+    <h1>Add Recipe</h1>
+
+    <form method="POST">
+
+        <div class="form-group">
+
+            <input
+            type="text"
+            name="title"
+            placeholder="Recipe Title"
+            required>
+
+        </div>
+
+        <div class="form-group">
+
+            <textarea
+            name="description"
+            rows="5"
+            placeholder="Description"
+            required></textarea>
+
+        </div>
+
+        <div class="form-group">
+
+            <textarea
+            name="ingredients"
+            rows="5"
+            placeholder="Ingredients"
+            required></textarea>
+
+        </div>
+
+        <div class="form-group">
+
+            <textarea
+            name="instructions"
+            rows="5"
+            placeholder="Instructions"
+            required></textarea>
+
+        </div>
+
+        <div class="form-group">
+
+            <input
+            type="text"
+            name="image"
+            placeholder="Image URL"
+            required>
+
+        </div>
+
+        <div class="form-group">
+
+            <select name="category_id">
+
+                {% for category in categories %}
+
+                <option value="{{ category.id }}">
+
+                    {{ category.category_name }}
+
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+        </div>
+
+        <button
+        type="submit"
+        class="submit-btn">
+
+            Add Recipe
+
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
