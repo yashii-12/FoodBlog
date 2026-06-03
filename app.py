@@ -193,7 +193,7 @@ def favorite(recipe_id):
 
         conn.commit()
 
-    return redirect('/')
+    return redirect('/my-favorites')
 
 # =========================
 # MY FAVORITES
