@@ -1096,34 +1096,32 @@ body{
 }
 
 .search-section{
-
+    background:#f5f5f5;
+    padding:30px;
     text-align:center;
-    margin:60px 0;
+}
+
+.search-section form{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
 .search-section input{
-    padding:15px;
-    width:300px;
+    width:400px;
     max-width:90%;
-    border: 1px solid #ddd;
-    border-radius:8px;
-    outline:none;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
     font-size:16px;
 }
 
 .search-section button{
-    padding:15px 25px;
-    background:#ff7a18;
+    padding:15px 35px;
+    background:#ff7b00;
     color:white;
     border:none;
-    border-radius:8px;
-    font-size:16px;
-    margin-left:10px;
+    border-radius:10px;
     cursor:pointer;
-    transition:0.3s;
-}
-
-.search-section button:hover{
-    background:#ea580c;
-    transform:translateY(-3px);
 }
