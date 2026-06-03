@@ -193,6 +193,14 @@ id="recipes">
     </p>
 
 </footer>
+
+{% if request.args.get('keyword') %}
+<script>
+    document.getElementById('recipes')
+    .scrollIntoView({ behavior: 'smooth' });
+</script>
+{% endif %}
+
 </body>
 </html>
 
