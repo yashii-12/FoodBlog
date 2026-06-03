@@ -541,10 +541,11 @@ def search():
        ON recipes.category_id = categories.id
         WHERE recipes.title LIKE %s
         OR recipes.description LIKE %s
+        OR categories.category_name LIKE %s
     """
     search_term = "%" + keyword + "%"
 
-    cursor.execute(query, (search_term, search_term))
+    cursor.execute(query, (search_term, search_term, search_term))
 
     recipes = cursor.fetchall()
 
