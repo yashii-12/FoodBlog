@@ -529,6 +529,31 @@ def add_blog():
     return render_template('add_blog.html')
 
 # =========================
+# SEARCH PAGE
+# =========================
+@app.route('/search')
+def search():
+
+    keyword = request.args.get('keyword')
+    query = """ SELECT recipes.*, categories.category_name 
+     FROM recipes
+      LEFT JOIN categories
+       ON recipes.category_id = categories.id
+        WHERE recipes.title LIKE %s
+        OR recipes.description LIKE %s
+    """
+    search_term = "%" + keyword + "%"
+
+    cursor.execute(query, (search_term, search_term))
+
+    recipes = cursor.fetchall()
+
+    return render_template(
+        'client.html',
+        recipes=recipes
+    )
+
+# =========================
 # BLOG PAGE
 # =========================
 

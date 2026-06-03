@@ -1094,3 +1094,36 @@ body{
 
     text-align:center;
 }
+
+.search-section{
+
+    text-align:center;
+    margin:60px 0;
+}
+
+.search-section input{
+    padding:15px;
+    width:300px;
+    max-width:90%;
+    border: 1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+    font-size:16px;
+}
+
+.search-section button{
+    padding:15px 25px;
+    background:#ff7a18;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    margin-left:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.search-section button:hover{
+    background:#ea580c;
+    transform:translateY(-3px);
+}
